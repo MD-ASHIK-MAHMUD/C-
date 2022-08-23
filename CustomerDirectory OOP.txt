@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+class CustomerDirectory
+{
+private:
+    char cusFirstName[30];
+    char cusLastName[20];
+    char cusDoB[10];
+    char cusTelNum[13];
+    char cusCountry[20];
+
+public:
+    void setCusInfo()
+    {
+        cout<<"Enter your first name"<<endl;
+        cin>>cusFirstName;
+        cout<<"Enter last name"<<endl;
+        cin>>cusLastName;
+        cout<<"Enter your date of birth"<<endl;
+        cin>>cusDoB;
+        cout<<"Enter your telephone number"<<endl;
+        cin>>cusTelNum;
+        cout<<"Enter the name of your country"<<endl;
+        cin>>cusCountry;
+    }
+    void getCusInfo()
+    {
+        cout<<"******Customer Details******"<<endl;
+        cout<<"Name = "<<cusFirstName<<" "<<cusLastName<<endl;
+        cout<<"Date of birth = "<<cusDoB<<endl;
+        cout<<"Telephone number = "<<cusTelNum<<endl;
+        cout<<"Country = "<<cusCountry<<endl;
+
+    }
+
+};
+
+int main()
+{
+    CustomerDirectory cus101,cus102;
+    cus101.setCusInfo();
+    cus101.getCusInfo();
+    cus102.setCusInfo();
+    cus102.getCusInfo();
+
+    return 0;
+}

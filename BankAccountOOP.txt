@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+
+class BankAccount
+{
+private:
+    char CusName[50];
+    char CusId[10];
+    float accBalance;
+    float depAmount;
+    float withAmount;
+
+public:
+    void setCusDetails()
+    {
+        cout<<"Enter your name"<<endl;
+        cin>>CusName;
+        cout<<"Enter your ID"<<endl;
+        cin>>CusId;
+    }
+    float checkBalance()
+    {
+        cout<<"Enter your balance"<<endl;
+        cin>>accBalance;
+    }
+    float depositMoney(float amount)
+    {
+        depAmount=accBalance+amount;
+    }
+    float withdrawMoney(float amount)
+    {
+        withAmount=accBalance-amount;
+    }
+    void showInfo()
+    {
+        cout<<"Name = "<<CusName<<endl;
+        cout<<"ID = "<<CusId<<endl;
+        cout<<"Balance = "<<accBalance<<endl;
+        cout<<"Balance after deposit = "<<depAmount<<endl;
+        cout<<"Balance after withdraw = "<<withAmount<<endl;
+    }
+
+};
+
+int main()
+{
+    BankAccount customer1,customer2;
+    customer1.setCusDetails();
+    customer1.checkBalance();
+    customer1.depositMoney(50000.00);
+    customer1.withdrawMoney(20000.00);
+    customer2.setCusDetails();
+    customer2.checkBalance();
+    customer2.depositMoney(15000.00);
+    customer2.withdrawMoney(5000.00);
+    customer1.showInfo();
+    customer2.showInfo();
+
+    return 0;
+}
